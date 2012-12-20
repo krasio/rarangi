@@ -1,6 +1,6 @@
 require "rarangi/version"
-require "rarangi/list"
-require "rarangi/entry"
+require "rarangi/entities/list"
+require "rarangi/entities/entry"
 
 module Rarangi
 end
