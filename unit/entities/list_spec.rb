@@ -1,10 +1,19 @@
-require 'spec_helper'
+require 'rarangi/entities/list'
 
 module Rarangi
   describe List do
     context "new list" do
       it {should be_empty}
       it {should have(0).entries}
+    end
+
+    context "initialization" do
+      context "owner" do
+        let(:user) { double }
+        subject { List.new(owner: user) }
+
+        its(:owner) {should == user}
+      end
     end
 
     context "in general" do

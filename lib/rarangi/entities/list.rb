@@ -1,9 +1,12 @@
 module Rarangi
   class List
-    attr_reader :entries
+    attr_reader :entries, :owner
 
-    def initialize
+    def initialize(attributes = {})
       @entries = []
+      if owner = attributes[:owner]
+        @owner = owner
+      end
     end
 
     def empty?
