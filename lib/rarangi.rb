@@ -13,6 +13,7 @@ require "rarangi/mappers/list_mapper"
 require "rarangi/mappers/entry_mapper"
 
 require "rarangi/use_cases/create_entry"
+require "rarangi/use_cases/create_user"
 
 require "rarangi/repository"
 
