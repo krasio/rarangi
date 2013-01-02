@@ -1,6 +1,6 @@
 module Rarangi
   class CreateEntry
-    def self.in_list(list)
+    def self.for_list(list)
       new(list)
     end
 
@@ -9,7 +9,8 @@ module Rarangi
     end
 
     def exec(entry)
-      @list << entry
+      entry.list = @list
+      Repository.entries.create(entry)
     end
   end
 end

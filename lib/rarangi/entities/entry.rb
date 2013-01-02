@@ -1,13 +1,17 @@
 module Rarangi
   class Entry
-    attr_reader :content
+    include Minimapper::Entity
 
-    def initialize(content)
-      @content = content
+    attributes :list_id, :content
+    attr_reader :list
+
+    def list=(list)
+      @list = list
+      self.list_id = @list.id
     end
 
     def to_s
-      @content
+      content
     end
   end
 end

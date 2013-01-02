@@ -1,12 +1,18 @@
 module Rarangi
   class List
+    include Minimapper::Entity
+
+    attributes :owner_id
     attr_reader :entries, :owner
 
     def initialize(attributes = {})
+      super
       @entries = []
-      if owner = attributes[:owner]
-        @owner = owner
-      end
+    end
+
+    def owner=(owner)
+      @owner = owner
+      self.owner_id = @owner.id
     end
 
     def empty?

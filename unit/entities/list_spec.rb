@@ -1,3 +1,7 @@
+require "minimapper"
+require "minimapper/entity"
+require "minimapper/memory"
+
 require 'rarangi/entities/list'
 
 module Rarangi
@@ -9,9 +13,10 @@ module Rarangi
 
     context "initialization" do
       context "owner" do
-        let(:user) { double }
+        let(:user) { double(id: 23) }
         subject { List.new(owner: user) }
 
+        its(:owner_id) {should == user.id}
         its(:owner) {should == user}
       end
     end

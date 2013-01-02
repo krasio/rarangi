@@ -17,6 +17,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency "activemodel", "3.2.9"
+  gem.add_dependency "minimapper"
+
   gem.add_development_dependency "rake"
   gem.add_development_dependency "debugger"
   gem.add_development_dependency "cucumber"

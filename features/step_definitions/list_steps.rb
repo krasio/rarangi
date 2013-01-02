@@ -1,5 +1,7 @@
 When /^I add "(.*?)" to my list$/ do |content|
-  Rarangi::CreateEntry.in_list(@me.list).exec(Rarangi::Entry.new(content))
+  Rarangi::CreateEntry.for_list(@me.list).exec(Rarangi::Entry.new(content: content))
+  @list = Repository.lists.find(@me.list.id)
+  @me.list = @list
 end
 
 Then /^the list should( not)? be empty$/ do |negative|
@@ -15,5 +17,6 @@ Then /^the list should have size of (\d+)$/ do |size|
 end
 
 Then /^"(.*?)" should be listed$/ do |content|
-  expect(@list.entries.map(&:to_s)).to include(content)
+  entry = @list.entries.find {|e| e.content == content}
+  expect(entry).to be_persisted
 end
