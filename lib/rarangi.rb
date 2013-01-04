@@ -3,6 +3,9 @@ require "minimapper/entity"
 require "minimapper/memory"
 require "minimapper/repository"
 
+require 'active_record'
+require 'logger'
+
 require "rarangi/version"
 require "rarangi/entities/user"
 require "rarangi/entities/list"

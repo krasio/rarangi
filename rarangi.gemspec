@@ -17,7 +17,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "activemodel", "3.2.9"
+  gem.add_dependency "activemodel", "3.2.10"
+  gem.add_dependency "activerecord", "3.2.10"
+  gem.add_dependency "pg"
   gem.add_dependency "minimapper"
 
   gem.add_development_dependency "rake"
