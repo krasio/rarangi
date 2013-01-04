@@ -8,9 +8,9 @@ require "rarangi/entities/user"
 require "rarangi/entities/list"
 require "rarangi/entities/entry"
 
-require "rarangi/mappers/user_mapper"
-require "rarangi/mappers/list_mapper"
-require "rarangi/mappers/entry_mapper"
+require "rarangi/mappers/memory/user_mapper"
+require "rarangi/mappers/memory/list_mapper"
+require "rarangi/mappers/memory/entry_mapper"
 
 require "rarangi/use_cases/create_entry"
 require "rarangi/use_cases/create_user"

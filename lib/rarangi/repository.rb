@@ -1,5 +1,7 @@
-Repository = Minimapper::Repository.build({
-  users: Rarangi::UserMapper.new,
-  lists: Rarangi::ListMapper.new,
-  entries: Rarangi::EntryMapper.new
-})
+module Rarangi
+  Repository = Minimapper::Repository.build({
+    users: Rarangi::Memory::UserMapper.new,
+    lists: Rarangi::Memory::ListMapper.new,
+    entries: Rarangi::Memory::EntryMapper.new
+  })
+end

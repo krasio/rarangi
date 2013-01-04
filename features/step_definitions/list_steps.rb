@@ -1,6 +1,6 @@
 When /^I add "(.*?)" to my list$/ do |content|
   Rarangi::CreateEntry.for_list(@me.list).exec(Rarangi::Entry.new(content: content))
-  @list = Repository.lists.find(@me.list.id)
+  @list = Rarangi::Repository.lists.find(@me.list.id)
   @me.list = @list
 end
 
