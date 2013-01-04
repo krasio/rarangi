@@ -26,4 +26,10 @@ module Rarangi
   def self.env
     @env
   end
+
+  def self.setup
+    ActiveRecord::Base.establish_connection(YAML::load(File.open('config/database.yml'))[env])
+  end
 end
+
+Rarangi.setup
