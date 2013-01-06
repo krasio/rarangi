@@ -9,7 +9,9 @@ module Rarangi
     end
 
     def assign_list(user)
-      list = List.new(owner: user)
+      list = List.new.tap do |l|
+        l.owner = user
+      end
       Repository.lists.create(list)
       user.list = list
     end
