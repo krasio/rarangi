@@ -1,10 +1,9 @@
 module Rarangi
   module AR
     class User < ActiveRecord::Base
-      # attr_accessible :name
     end
 
-    class UserMapper < Minimapper::AR
+    class UserMapper < Mapper::AR
       def find_by_name(name)
         user = entity_for(record_klass.find_by_name(name))
         set_list(user)

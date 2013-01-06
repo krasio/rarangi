@@ -3,7 +3,7 @@ module Rarangi
     class List < ActiveRecord::Base
     end
 
-    class ListMapper < Minimapper::AR
+    class ListMapper < Mapper::AR
       def find(id)
         list = super(id)
         set_entries(list)
