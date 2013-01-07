@@ -22,16 +22,22 @@ module Rarangi
     end
 
     context "in general" do
+      let(:entry) { Struct.new(:list).new }
+
       describe "#<<" do
-        let(:entry) { double }
-        before { subject << entry }
+        subject { List.new(id: 23) }
+
+        before do
+          entry.should_receive(:list=).with(subject)
+          subject << entry
+        end
 
         its(:entries) {should == [entry]}
       end
 
       describe "#empty?" do
         context "when entries" do
-          before { subject << double }
+          before { subject << entry }
 
           it {should_not be_empty}
         end
@@ -44,8 +50,8 @@ module Rarangi
       describe "#size" do
         context "when entries" do
           before do
-            subject << double
-            subject << double
+            subject << entry
+            subject << entry
           end
 
           its(:size) {should == 2}

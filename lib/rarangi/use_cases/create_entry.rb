@@ -9,7 +9,7 @@ module Rarangi
     end
 
     def exec(entry)
-      entry.list = @list
+      @list << entry
       Repository.entries.create(entry)
     end
   end
