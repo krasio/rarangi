@@ -6,15 +6,17 @@ require 'rarangi'
 
 RSpec.configure do |config|
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    if Rarangi.persistance == 'ar'
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
+    end
   end
 
   config.before(:each) do
-    DatabaseCleaner.start
+    DatabaseCleaner.start if Rarangi.persistance == 'ar'
   end
 
   config.after(:each) do
-    DatabaseCleaner.clean
+    DatabaseCleaner.clean if Rarangi.persistance == 'ar'
   end
 end

@@ -1,12 +1,13 @@
 module Rarangi
-  # Repository = Minimapper::Repository.build({
-  #   users: Rarangi::Memory::UserMapper.new,
-    # lists: Rarangi::Memory::ListMapper.new,
-    # entries: Rarangi::Memory::EntryMapper.new
-  # })
+  Mapper = case persistance
+           when 'memory'
+             Rarangi::Memory
+           when 'ar'
+             Rarangi::AR
+           end
   Repository = Minimapper::Repository.build({
-    users: Rarangi::AR::UserMapper.new,
-    lists: Rarangi::AR::ListMapper.new,
-    entries: Rarangi::AR::EntryMapper.new
+    users: Mapper::UserMapper.new,
+    lists: Mapper::ListMapper.new,
+    entries: Mapper::EntryMapper.new
   })
 end
