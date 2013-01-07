@@ -11,18 +11,17 @@ module Rarangi
       it {should have(0).entries}
     end
 
-    context "initialization" do
-      context "owner" do
+    context "in general" do
+      let(:entry) { Struct.new(:list).new }
+
+      context "#owner=" do
         let(:user) { double(id: 23) }
-        subject { List.new(owner: user) }
+
+        before { subject.owner = user }
 
         its(:owner_id) {should == user.id}
         its(:owner) {should == user}
       end
-    end
-
-    context "in general" do
-      let(:entry) { Struct.new(:list).new }
 
       describe "#<<" do
         subject { List.new(id: 23) }
