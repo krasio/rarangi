@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130104161157) do
+ActiveRecord::Schema.define(:version => 20130107180213) do
 
   create_table "entries", :force => true do |t|
     t.integer  "list_id"
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "completed"
   end
 
   add_index "entries", ["list_id"], :name => "index_entries_on_list_id"

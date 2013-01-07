@@ -3,12 +3,12 @@ module Rarangi
     class ListMapper < Minimapper::Memory
       def find(id)
         list = super(id)
-        set_entries(list)
+        # set_entries(list)
       end
 
       def find_by_owner_id(owner_id)
         list = all.find {|l| l.owner_id == owner_id}
-        set_entries(list)
+        # set_entries(list)
       end
 
       private

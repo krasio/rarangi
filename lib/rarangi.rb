@@ -10,8 +10,9 @@ require "rarangi/entities/user"
 require "rarangi/entities/list"
 require "rarangi/entities/entry"
 
-require "rarangi/use_cases/create_entry"
 require "rarangi/use_cases/create_user"
+require "rarangi/use_cases/create_entry"
+require "rarangi/use_cases/complete_entry"
 
 module Rarangi
   @env = ENV['RARANGI_ENV'] || 'development'
