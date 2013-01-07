@@ -1,0 +1,15 @@
+development: &development
+  adapter: postgresql
+  encoding: unicode
+  database: rarangi_development
+  pool: 5
+  username: rarangi
+  password: rarangi
+
+test: &test
+  <<: *development
+  database: rarangi_test
+
+production:
+  <<: *development
+  database: rarangi_production
