@@ -20,10 +20,8 @@ module Rarangi
     end
 
     def <<(new_entry)
-      new_entry.tap do |e|
-        e.list = self
-        entries << e
-      end
+      new_entry.list = self
+      entries << new_entry
     end
 
     def size

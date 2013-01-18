@@ -1,8 +1,8 @@
 module Rarangi
   module Memory
     class UserMapper < Minimapper::Memory
-      def find_by_name(name)
-        user = all.find {|u| u.name == name}
+      def find_by_email(email)
+        user = all.find {|u| u.email == email}
         set_list(user)
       end
 

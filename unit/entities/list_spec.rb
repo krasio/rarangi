@@ -1,7 +1,4 @@
-require "minimapper"
-require "minimapper/entity"
-require "minimapper/memory"
-
+require_relative '../unit_helper'
 require 'rarangi/entities/list'
 
 module Rarangi

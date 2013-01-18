@@ -1,7 +1,11 @@
 module Rarangi
   class CreateUser
-    def exec(name)
-      user = User.new(name: name)
+    def self.exec(email)
+      self.new.exec(email)
+    end
+
+    def exec(email)
+      user = User.new(email: email)
       Repository.users.create(user)
       assign_list(user)
 

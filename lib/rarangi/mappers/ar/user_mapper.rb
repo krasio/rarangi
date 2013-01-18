@@ -4,8 +4,8 @@ module Rarangi
     end
 
     class UserMapper < Mapper::AR
-      def find_by_name(name)
-        user = entity_for(record_klass.find_by_name(name))
+      def find_by_email(email)
+        user = entity_for(record_klass.find_by_email(email))
         set_list(user)
       end
 
