@@ -26,8 +26,8 @@ module Rarangi
     @persistance
   end
 
-  def self.setup
-    ActiveRecord::Base.establish_connection(YAML::load(File.open('config/database.yml'))[env]) if persistance == 'ar'
+  def self.init(config = {})
+    ActiveRecord::Base.establish_connection(config) if persistance == 'ar'
   end
 end
 
@@ -48,5 +48,3 @@ when 'ar'
 end
 
 require "rarangi/repository"
-
-Rarangi.setup

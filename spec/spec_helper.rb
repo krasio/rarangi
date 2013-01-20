@@ -7,6 +7,7 @@ require 'rarangi'
 RSpec.configure do |config|
   config.before(:suite) do
     if Rarangi.persistance == 'ar'
+      Rarangi.init(YAML::load(File.open('config/database.yml'))[Rarangi.env])
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with(:truncation)
     end

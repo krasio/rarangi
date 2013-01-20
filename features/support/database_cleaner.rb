@@ -1,4 +1,5 @@
 if Rarangi.persistance == 'ar'
+  Rarangi.init(YAML::load(File.open('config/database.yml'))[Rarangi.env])
   begin
     require 'database_cleaner'
     require 'database_cleaner/cucumber'
