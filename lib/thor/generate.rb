@@ -6,7 +6,7 @@ module Rarangi
 
     attr_accessor :name
 
-    desc "migration", "Generate migration file"
+    desc "migration [FILE]", "Generate migration file"
     def migration(name)
       @name = name
       prefix = Time.now.strftime "%Y%m%d%H%M%S"
