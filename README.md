@@ -1,29 +1,13 @@
-# Rarangi
+# Rārangi
 
-TODO: Write a gem description
+    1. (verb) (-tia,-hia) to list, arrange, itemise. 
+    2. (noun) line, rank, row, queue, list, catalogue.
 
-## Installation
+## Description
 
-Add this line to your application's Gemfile:
+This is just a toy project to experiment with separating the framework (Rails or Sinatra), persistance (AR, memory, etc) and business logic.
 
-    gem 'rarangi'
+## TODO
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install rarangi
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Figure out how can use migrations as Rails native migrations (copy?)
+2. Authentication (can we add Devise on top of our user model.
